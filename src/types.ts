@@ -1,7 +1,7 @@
 export type User = {
     name: {
-        firstName: string;
-        lastName: string;
+        first: string;
+        last: string;
         title: string;
     }
     id: {
@@ -13,6 +13,6 @@ export type User = {
     }
 }
 
-export type UserList = {
+export type ListOfUsers = {
     users: User[]
 }
