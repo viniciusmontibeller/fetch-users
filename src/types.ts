@@ -16,3 +16,7 @@ export type User = {
 export type ListOfUsers = {
     users: User[]
 }
+
+export type Page = {
+    setPage: React.Dispatch<React.SetStateAction<number>>;
+}
