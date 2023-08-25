@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { ListOfUsers, User } from "../../types"
 
-const UserList = ({ users }: ListOfUsers) => {
+const UserList = ({ users, userFilter }: ListOfUsers) => {
 
     return (
         <ul>
@@ -14,8 +14,8 @@ const UserList = ({ users }: ListOfUsers) => {
                 <p>Age</p>
                 <p>Actions</p>
             </li>
-            {
-                users.map((user: User, index) => {
+            { userFilter(users).length > 0 ?
+                userFilter(users).map((user: User, index) => {
                     return (
                         <li key={index}>
                             <p>{user.id.value}</p>
@@ -29,7 +29,7 @@ const UserList = ({ users }: ListOfUsers) => {
                             </Link>
                         </li>
                     )
-                })
+                }) : <h3>User not found</h3>
             }
         </ul>
     )
