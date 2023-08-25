@@ -1,0 +1,13 @@
+@use "../abstracts/" as *;
+@use "../utilities/" as *;
+
+.header{
+    @extend .flex;
+    flex-direction: column;
+    margin-top: 113px;
+    border-bottom: 1px solid $header-divider;
+    h1{
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+}

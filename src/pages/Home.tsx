@@ -27,10 +27,12 @@ const Home = () => {
 
     return (
         <>
-            <h1>List Users</h1>
-            <SearchUser 
-                setSearch={setSearch}
-                />
+            <header className='header'>
+                <h1>List Users</h1>
+                <SearchUser 
+                    setSearch={setSearch}
+                    />
+            </header>
             <UserList 
                 userFilter={userFilter}
                 users={users}/>

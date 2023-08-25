@@ -2,10 +2,10 @@ import { Search } from "../../types"
 
 const SearchUser = ({ setSearch }: Search) => {
     return (
-        <div>
+        <div className="search-user">
             <input
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="SearchUser"
+                placeholder="SearchUser..."
                 type="search"/>
         </div>
     )

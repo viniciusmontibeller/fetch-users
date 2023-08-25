@@ -2,10 +2,11 @@
 @use "../utilities" as *;
 
 .user-list{
+    margin-top: 10px;
     li{
         @extend .flex;
     }
-    .header{
+    .list-header{
         background-color: $primary;
     }
 }

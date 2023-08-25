@@ -1,0 +1,19 @@
+@use "../abstracts/" as *;
+@use "../utilities/" as *;
+
+.search-user{
+    max-width: 704px;
+    width: 100%;
+    margin-bottom: 40px;
+    input{
+        background-color: transparent;
+        border: none;
+        font-size: $base-font-size;
+        font-family: $base-font;
+        color: $very-light-gray;
+        border: 1px solid $border;
+        border-radius: 8px;
+        padding: 25px 25px;
+        width: 100%;
+    }
+}

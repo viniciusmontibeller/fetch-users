@@ -5,7 +5,7 @@ const UserList = ({ users, userFilter }: ListOfUsers) => {
 
     return (
         <ul className="user-list">
-            <li className="header">
+            <li className="list-header">
                 <p>ID</p>
                 <p>First Name</p>
                 <p>Last Name</p>
