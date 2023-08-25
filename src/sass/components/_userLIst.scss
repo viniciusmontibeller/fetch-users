@@ -1,0 +1,11 @@
+@use "../abstracts" as *;
+@use "../utilities" as *;
+
+.user-list{
+    li{
+        @extend .flex;
+    }
+    .header{
+        background-color: $primary;
+    }
+}

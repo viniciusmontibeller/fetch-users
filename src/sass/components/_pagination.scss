@@ -1,0 +1,20 @@
+@use "../abstracts/" as *;
+@use "../utilities/" as *;
+
+.pagination{
+    @extend .flex;
+    gap: 1rem;
+    button{
+        @extend %default-button;
+        @extend .flex;
+        border: 1px solid $primary;
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        &.next{
+            svg{
+                transform: rotate(180deg);
+            }
+        }
+    }
+}

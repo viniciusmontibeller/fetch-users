@@ -3,9 +3,9 @@ import { Page } from "../../types"
 
 const Pagination = ({ setPage }: Page) => {
     return (
-        <ul>
+        <ul className="pagination">
             <li>
-                <button onClick={() => setPage(prev => prev - 1)}>
+                <button className="prev arrow" onClick={() => setPage(prev => prev - 1)}>
                     <Arrow/>
                 </button>
             </li>
@@ -35,7 +35,7 @@ const Pagination = ({ setPage }: Page) => {
                 </button>
             </li>
             <li>
-                <button onClick={() => setPage(prev => prev + 1)}>
+                <button className="next arrow" onClick={() => setPage(prev => prev + 1)}>
                     <Arrow/>
                 </button>
             </li>

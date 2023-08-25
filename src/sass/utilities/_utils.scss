@@ -1,0 +1,16 @@
+@use "../abstracts/" as *;
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%default-button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: $base-font;
+    font-size: $base-font-size;
+    color: $light-gray;
+}

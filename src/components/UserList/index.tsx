@@ -4,8 +4,8 @@ import { ListOfUsers, User } from "../../types"
 const UserList = ({ users, userFilter }: ListOfUsers) => {
 
     return (
-        <ul>
-            <li>
+        <ul className="user-list">
+            <li className="header">
                 <p>ID</p>
                 <p>First Name</p>
                 <p>Last Name</p>
