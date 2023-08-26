@@ -3,6 +3,14 @@ import { ListOfUsers, User } from "../../types"
 
 const UserList = ({ users, userFilter }: ListOfUsers) => {
 
+    function transformStringToDate (string: string) {
+        const data = new Date(string)
+        const day = data.getDate()
+        const month = data.getMonth()
+        const year = data.getFullYear()
+        return `${day}/${month}/${year}`
+    }
+
     return (
         <section className="users-info">
         <ul className="user-list">
@@ -23,7 +31,7 @@ const UserList = ({ users, userFilter }: ListOfUsers) => {
                             <p>{user.name.first}</p>
                             <p>{user.name.last}</p>
                             <p>{user.name.title}</p>
-                            <p>{user.dob.date}</p>
+                            <p>{transformStringToDate(user.dob.date)}</p>
                             <p>{user.dob.age}</p>
                             <Link to="">
                                 <p>View profile</p>
