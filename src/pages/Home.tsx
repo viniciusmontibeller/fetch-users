@@ -26,7 +26,7 @@ const Home = () => {
     }
 
     return (
-        <>
+        <main>
             <header className='header'>
                 <h1>List Users</h1>
                 <SearchUser 
@@ -38,7 +38,7 @@ const Home = () => {
                 users={users}/>
             <Pagination 
                 setPage={setPage}/>
-        </>
+        </main>
     )
 }
 

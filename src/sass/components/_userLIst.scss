@@ -1,12 +1,31 @@
 @use "../abstracts" as *;
 @use "../utilities" as *;
 
+.users-info{
+    @extend .flex;
+}
+
 .user-list{
-    margin-top: 10px;
+    margin-top: 25px;
+    max-width: 1330px;
+    width: 100%;
+    margin-bottom: 60px;
     li{
+        padding-block: 10px;
         @extend .flex;
+        p, a{
+            text-align: center;
+            flex-basis: 190px;
+        }
+        &:not(:last-of-type, :first-of-type){
+            border-bottom: 1px solid $users-divider;
+        }
+        &:first-of-type{
+            padding-block: 10px;
+        }
     }
     .list-header{
         background-color: $primary;
+        
     }
 }

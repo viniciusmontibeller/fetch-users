@@ -4,6 +4,7 @@ import { ListOfUsers, User } from "../../types"
 const UserList = ({ users, userFilter }: ListOfUsers) => {
 
     return (
+        <section className="users-info">
         <ul className="user-list">
             <li className="list-header">
                 <p>ID</p>
@@ -32,6 +33,7 @@ const UserList = ({ users, userFilter }: ListOfUsers) => {
                 }) : <h3>User not found</h3>
             }
         </ul>
+        </section>
     )
 }
 
