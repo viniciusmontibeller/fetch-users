@@ -1,0 +1,7 @@
+@use "./utils";
+
+main{
+    @extend .flex;
+    flex-direction: column;
+    position: relative;
+}
