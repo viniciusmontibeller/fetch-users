@@ -1,15 +1,8 @@
 import { Link } from "react-router-dom"
 import { ListOfUsers, User } from "../../types"
+import { transformStringToDate } from "../../utils/transformStringToDate"
 
 const UserList = ({ users, userFilter }: ListOfUsers) => {
-
-    function transformStringToDate (string: string) {
-        const data = new Date(string)
-        const day = data.getDate()
-        const month = data.getMonth()
-        const year = data.getFullYear()
-        return `${day}/${month}/${year}`
-    }
 
     return (
         <section className="users-info">
@@ -33,7 +26,7 @@ const UserList = ({ users, userFilter }: ListOfUsers) => {
                             <p>{user.name.title}</p>
                             <p>{transformStringToDate(user.dob.date)}</p>
                             <p>{user.dob.age}</p>
-                            <Link to="">
+                            <Link to="/details" state={user}>
                                 <p>View profile</p>
                             </Link>
                         </li>

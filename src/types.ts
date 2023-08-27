@@ -11,6 +11,40 @@ export type User = {
         date: string;
         age: number;
     }
+    picure: {
+        large: string;
+    }
+    location: {
+        city: string;
+        country: string;
+        state: string;
+        street: {
+            name: string;
+            number: number;
+        }
+    }
+    postcode: number;
+}
+
+export type UserDetails ={
+    name: {
+        first: string;
+        last: string;
+        title: string;
+    }
+    picure: {
+        large: string;
+    }
+    location: {
+        city: string;
+        country: string;
+        state: string;
+        street: {
+            name: string;
+            number: number;
+        }
+    }
+    postcode: number;
 }
 
 export type ListOfUsers = {
