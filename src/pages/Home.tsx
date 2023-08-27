@@ -10,14 +10,22 @@ const Home = () => {
     const [users, setUsers] = useState([])
     const [page, setPage] = useState(1)
     const [search, setSearch] = useState('')
+    const [loading, setLoading] = useState(true)
+
+    const usersPerPage = 10;
+
+    const indexOfLastUser = page * usersPerPage;
+    const indexOfFirstUser = indexOfLastUser - usersPerPage;
+    const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
 
     useEffect(() => {
         const getUsersData = async () => {
-            const data = await getUsers(page)
+            const data = await getUsers()
             setUsers(data.results)
+            setLoading(false)
         }
         getUsersData()
-    }, [page])
+    }, [])
 
     const userFilter = (users: User[]) => {
         return users.filter(user => {
@@ -33,10 +41,12 @@ const Home = () => {
                     setSearch={setSearch}
                     />
             </header>
-            <UserList 
+            <UserList
+                loading={loading}
                 userFilter={userFilter}
-                users={users}/>
+                currentUsers={currentUsers}/>
             <Pagination 
+                page={page}
                 setPage={setPage}/>
         </main>
     )

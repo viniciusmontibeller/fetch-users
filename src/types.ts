@@ -48,11 +48,13 @@ export type UserDetails ={
 }
 
 export type ListOfUsers = {
-    users: User[];
+    loading: boolean;
+    currentUsers: User[];
     userFilter: (users: User[]) => User[];
 }
 
 export type Page = {
+    page: number;
     setPage: React.Dispatch<React.SetStateAction<number>>;
 }
 

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { ListOfUsers, User } from "../../types"
 import { transformStringToDate } from "../../utils/transformStringToDate"
 
-const UserList = ({ users, userFilter }: ListOfUsers) => {
+const UserList = ({ currentUsers, userFilter, loading }: ListOfUsers) => {
 
     return (
         <section className="users-info">
@@ -16,8 +16,9 @@ const UserList = ({ users, userFilter }: ListOfUsers) => {
                 <p>Age</p>
                 <p>Actions</p>
             </li>
-            { userFilter(users).length > 0 ?
-                userFilter(users).map((user: User, index) => {
+            { loading ? <h3>Loading...</h3> :
+                userFilter(currentUsers).length > 0 ?
+                userFilter(currentUsers).map((user: User, index) => {
                     return (
                         <li key={index}>
                             <p>{user.id.value}</p>
@@ -31,7 +32,8 @@ const UserList = ({ users, userFilter }: ListOfUsers) => {
                             </Link>
                         </li>
                     )
-                }) : <h3>User not found</h3>
+                }) : 
+                <h3 >User not found</h3>
             }
         </ul>
         </section>

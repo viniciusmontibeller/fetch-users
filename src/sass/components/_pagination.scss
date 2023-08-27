@@ -3,18 +3,32 @@
 
 .pagination{
     @extend .flex;
-    gap: 1rem;
+    gap: 10px;
+    margin-bottom: 150px;
     button{
         @extend %default-button;
         @extend .flex;
         border: 1px solid $primary;
+        font-size: 32px;
         height: 80px;
         width: 80px;
         border-radius: 50%;
+        transition: 0.3s ease-in-out;
         &.next{
             svg{
                 transform: rotate(180deg);
             }
+        }
+        &:hover{
+            box-shadow: $primary 0px 5px 15px;
+        }
+        &.active{
+            background-color: $primary;
+        }
+        &:disabled{
+            opacity: 0.6;
+            cursor: default;
+            box-shadow: none;
         }
     }
 }
