@@ -1,12 +1,17 @@
 @use "../abstracts/" as *;
 @use "../utilities/" as *;
 
-a{
-    color: $very-dark-gray;
-    font-size: 16px;
-    position: absolute;
-    top: 17px;
-    left: 23px;
+.details-page{
+    @extend .flex;
+    flex-direction: column;
+    position: relative;
+    a{
+        color: $very-dark-gray;
+        font-size: 16px;
+        position: absolute;
+        top: 17px;
+        left: 23px;
+    }
 }
 .user-primary-info{
     margin-top: 65px;
@@ -44,6 +49,13 @@ a{
         color: $very-light-gray;
         font-size: 24px;
         font-weight: 500;
+        flex-basis: 33.3%;
+        border-bottom: 4px solid transparent;
+        transition: border 0.3s ease-in-out;
+        padding-bottom: 15px;
+        &.active{
+            border-bottom: 4px solid $primary;
+        }
     }
 }
 .tab{

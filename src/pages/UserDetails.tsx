@@ -1,13 +1,16 @@
 import { Link, useLocation } from "react-router-dom"
 import { transformStringToDate } from "../utils/transformStringToDate"
+import { useState } from 'react'
 
 const UserDetails = () => {
+
+    const [tab, setTab] = useState("info");
 
     const { state } = useLocation();
     console.log(state)
 
     return (
-        <main>
+        <section className="details-page">
             <Link to=".." relative="path">
                 Back
             </Link>
@@ -18,11 +21,17 @@ const UserDetails = () => {
             </div>
             <section className="user-info-tabs">
                 <div className="tabs">
-                    <button>Info</button>
-                    <button>Location</button>
-                    <button>Login</button>
+                    <button 
+                        className={`${tab === "info" ? "active" : ""}`}
+                        onClick={() => setTab("info")}>Info</button>
+                    <button 
+                        className={`${tab === "location" ? "active" : ""}`}
+                        onClick={() => setTab("location")}>Location</button>
+                    <button 
+                        className={`${tab === "login" ? "active" : ""}`}
+                        onClick={() => setTab("login")}>Login</button>
                 </div>
-                <div className="tab info active">
+                <div className={`tab ${tab === "info" ? "active" : ""}`}>
                     <div>
                         <p>Gender</p>
                         <p>{state.gender}</p>
@@ -40,7 +49,7 @@ const UserDetails = () => {
                         <p>{state.dob.age}</p>
                     </div>
                 </div>
-                <div className="tab location">
+                <div className={`tab ${tab === "location" ? "active" : ""}`}>
                     <div>
                         <p>City</p>
                         <p>{state.location.city}</p>
@@ -62,14 +71,26 @@ const UserDetails = () => {
                         <p>{state.location.postcode}</p>
                     </div>
                 </div>
-                <div className="tab login">
-                    <p>{state.login.username}</p>
-                    <p>{state.login.password}</p>
-                    <p>{state.registered.age}</p>
-                    <p>{transformStringToDate(state.registered.date)}</p>
+                <div className={`tab ${tab === "login" ? "active" : ""}`}>
+                    <div>
+                        <p>User name</p>
+                        <p>{state.login.username}</p>
+                    </div>
+                    <div>
+                        <p>Passowrd</p>
+                        <p>{state.login.password}</p>
+                    </div>
+                    <div>
+                        <p>Years of usage</p>
+                        <p>{state.registered.age}</p>
+                    </div>
+                    <div>
+                        <p>Registered date</p>
+                        <p>{transformStringToDate(state.registered.date)}</p>
+                    </div>
                 </div>
             </section>
-        </main>
+        </section>
     )
 }
 

@@ -1,6 +1,6 @@
 @use "./utils";
 
-main{
+.container{
     @extend .flex;
     flex-direction: column;
     position: relative;
