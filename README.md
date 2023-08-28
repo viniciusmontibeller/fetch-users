@@ -42,7 +42,7 @@ Essa projeto foi desenvolvido em React.js e consiste em uma Single Page Aplicati
 
 ## Deploy
 
-Link para a página do projeto: [Deploy através da vercel](https://pokedex-4pytvwf4h-viniciusmontibeller.vercel.app/)
+Link para a página do projeto: [Deploy através da vercel](https://fetch-users-sigma.vercel.app/)
 
 ## Tecnologias
 
