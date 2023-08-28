@@ -1,7 +1,14 @@
 import { ReactComponent as Arrow} from "../../assets/vector.svg";
 import { Page } from "../../types"
 
-const Pagination = ({ page, setPage }: Page) => {
+const Pagination = ({ totalUsers, usersPerPage, page, setPage }: Page) => {
+
+    const pageNumbers: number[] = [];
+
+    for(let i = 1; i <= Math.ceil(totalUsers / usersPerPage); i++){
+        pageNumbers.push(i);
+    }
+
     return (
         <ul className="pagination">
             <li>
@@ -11,41 +18,17 @@ const Pagination = ({ page, setPage }: Page) => {
                     <Arrow/>
                 </button>
             </li>
-            <li>
-                <button 
-                    className={`${page === 1 ? "active" : ""}`}
-                    onClick={() => setPage(1)}>
-                    1
-                </button>
-            </li>
-            <li>
-                <button 
-                    className={`${page === 2 ? "active" : ""}`}
-                    onClick={() => setPage(2)}>
-                    2
-                </button>
-            </li>
-            <li>
-                <button 
-                    className={`${page === 3 ? "active" : ""}`}
-                    onClick={() => setPage(3)}>
-                    3
-                </button>
-            </li>
-            <li>
-                <button 
-                    className={`${page === 4 ? "active" : ""}`}
-                    onClick={() => setPage(4)}>
-                    4
-                </button>
-            </li>
-            <li>
-                <button 
-                    className={`${page === 5 ? "active" : ""}`}
-                    onClick={() => setPage(5)}> 
-                   5
-                </button>
-            </li>
+            {
+                pageNumbers.map((number) => (
+                    <li key={number}>
+                        <button 
+                            className={`${page === number ? "active" : ""}`}
+                            onClick={() => setPage(number)}>
+                        {number}
+                        </button>
+                    </li>
+                ))
+            }
             <li>
                 <button 
                     disabled={page === 5}

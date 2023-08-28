@@ -12,12 +12,6 @@ const Home = () => {
     const [search, setSearch] = useState('')
     const [loading, setLoading] = useState(true)
 
-    const usersPerPage = 10;
-
-    const indexOfLastUser = page * usersPerPage;
-    const indexOfFirstUser = indexOfLastUser - usersPerPage;
-    const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
-
     useEffect(() => {
         const getUsersData = async () => {
             const data = await getUsers()
@@ -33,6 +27,12 @@ const Home = () => {
         })
     }
 
+    const usersPerPage = 10;
+
+    const indexOfLastUser = page * usersPerPage;
+    const indexOfFirstUser = indexOfLastUser - usersPerPage;
+    const currentUsers = userFilter(users).slice(indexOfFirstUser, indexOfLastUser);
+
     return (
         <main>
             <header className='header'>
@@ -43,9 +43,10 @@ const Home = () => {
             </header>
             <UserList
                 loading={loading}
-                userFilter={userFilter}
                 currentUsers={currentUsers}/>
-            <Pagination 
+            <Pagination
+                totalUsers={userFilter(users).length}
+                usersPerPage={usersPerPage}
                 page={page}
                 setPage={setPage}/>
         </main>
