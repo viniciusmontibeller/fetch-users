@@ -26,6 +26,11 @@
         a{
             color: $primary;
         }
+        p{
+            span{
+                color: $very-dark-gray;
+            }
+        }
     }
     .list-header{
         background-color: $primary;

@@ -11,6 +11,7 @@ const Home = () => {
     const [page, setPage] = useState(1)
     const [search, setSearch] = useState('')
     const [loading, setLoading] = useState(true)
+    const usersPerPage = 10;
 
     useEffect(() => {
         const getUsersData = async () => {
@@ -27,7 +28,9 @@ const Home = () => {
         })
     }
 
-    const usersPerPage = 10;
+    useEffect(() => {
+        setPage(1);
+    }, [search])
 
     const indexOfLastUser = page * usersPerPage;
     const indexOfFirstUser = indexOfLastUser - usersPerPage;

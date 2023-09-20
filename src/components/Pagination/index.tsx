@@ -9,11 +9,13 @@ const Pagination = ({ totalUsers, usersPerPage, page, setPage }: Page) => {
         pageNumbers.push(i);
     }
 
+    console.log(pageNumbers)
+
     return (
         <ul className="pagination">
             <li>
                 <button 
-                    disabled={page === 1}
+                    disabled={page === 1 || pageNumbers.length <= 1}
                     className="prev arrow" onClick={() => setPage(prev => prev - 1)}>
                     <Arrow/>
                 </button>
@@ -31,7 +33,7 @@ const Pagination = ({ totalUsers, usersPerPage, page, setPage }: Page) => {
             }
             <li>
                 <button 
-                    disabled={page === 5}
+                    disabled={page === pageNumbers.length || pageNumbers.length <= 1}
                     className="next arrow" onClick={() => setPage(prev => prev + 1)}>
                     <Arrow/>
                 </button>

@@ -21,7 +21,7 @@ const UserList = ({ currentUsers, loading }: ListOfUsers) => {
                 currentUsers.map((user: User, index) => {
                     return (
                         <li key={index}>
-                            <p>{user.id.value}</p>
+                            <p>{user.id.value === "" || user.id.value?.includes("undefined") || user.id.value === null ? <span>No Id</span> : user.id.value}</p>
                             <p>{user.name.first}</p>
                             <p>{user.name.last}</p>
                             <p>{user.name.title}</p>
