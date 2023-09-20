@@ -8,9 +8,9 @@
 <a href="https://vitejs.dev/" target="_blank"><img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E"/></a>
 <a href="https://vercel.com/" target="_blank"><img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/></a>
 
-## Teste intermediário da [Union Developers](https://www.uniondevelopers.com.br/)
+## Teste da [Union Developers](https://www.uniondevelopers.com.br/)
 
-Esse é um projeto que lista os usuários e disponibiliza informações detalhadas de cada usuário.
+Esse projeto foi organizado pela [Union Developers](https://www.uniondevelopers.com.br/) com finalidade de teste. O projeto consta em realizar uma listagem de usuários, e com informações detalhadas de cada usuário. 
 
 ## Tabela de Conteúdos
 
