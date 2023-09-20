@@ -23,6 +23,9 @@
         &:first-of-type{
             padding-block: 8px;
         }
+        a{
+            color: $primary;
+        }
     }
     .list-header{
         background-color: $primary;
